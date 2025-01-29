@@ -12,6 +12,8 @@ API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
 API_KEY = environ.get('API_KEY')
 API_URL = environ.get('API_URL')
+API_KEY2 = environ.get('API_KEY2')
+API_URL2 = environ.get('API_URL2')
 
 akbotz = Client('link shortener bot',
              api_id=API_ID,
