@@ -39,7 +39,7 @@ async def link_handler(bot, message):
     for link in links:
         try:
             short_link = await get_shortlink(link)
-            await message.reply(f"𝐇𝐞𝐫𝐞 𝐢𝐬 𝐘𝐨𝐮𝐫 𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤\n\n𝐎𝐫𝐢𝐠𝐢𝐧𝐚𝐥 𝐋𝐢𝐧𝐤: {link}\n\n𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤: `{short_link}`",quote=True,disable_web_page_preview=True)
+            await message.reply(f"𝐇𝐞𝐫𝐞 𝐢𝐬 𝐘𝐨𝐮𝐫 𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤\n\n𝐎𝐫𝐢𝐠𝐢𝐧𝐚𝐥 𝐋𝐢𝐧𝐤: {link}\n\n𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤: `{short_link2}`",quote=True,disable_web_page_preview=True)
         except Exception as e:
             await message.reply(f'𝐄𝐫𝐫𝐨𝐫: `{e}`', quote=True)
 
@@ -47,6 +47,8 @@ async def link_handler(bot, message):
 async def get_shortlink(link):
     url = API_URL
     params = {'api': API_KEY, 'url': link}
+    url2 = API_URL2
+    params = {'api': API_KEY2, 'url2': short_link2}
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params, raise_for_status=True) as response:
