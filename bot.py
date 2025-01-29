@@ -49,9 +49,6 @@ async def link_handler(bot, message):
 async def get_shortlink(link):
     url = API_URL
     params = {'api': API_KEY, 'url': link}
-async def get_shortlink(short_link):
-    url2 = API_URL2
-    params = {'api2': API_KEY2, 'url2': short_link}
     async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params, raise_for_status=True) as response:
             data = await response.json()
