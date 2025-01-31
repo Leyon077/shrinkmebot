@@ -12,6 +12,8 @@ API_HASH = environ.get('API_HASH')
 BOT_TOKEN = environ.get('BOT_TOKEN')
 API_KEY = environ.get('API_KEY')
 API_URL = environ.get('API_URL')
+API_KEY2 = environ.get('API_KEY2')
+API_URL2 = environ.get('API_URL2')
 
 akbotz = Client('link shortener bot',
              api_id=API_ID,
@@ -39,7 +41,7 @@ async def link_handler(bot, message):
     for link in links:
         try:
             short_link = await get_shortlink(link)
-            await message.reply(f"𝐇𝐞𝐫𝐞 𝐢𝐬 𝐘𝐨𝐮𝐫 𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤\n\n𝐎𝐫𝐢𝐠𝐢𝐧𝐚𝐥 𝐋𝐢𝐧𝐤: {link}\n\n𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤: `{short_link}`",quote=True,disable_web_page_preview=True)
+            await message.reply(f"𝐇𝐞𝐫𝐞 𝐢𝐬 𝐘𝐨𝐮𝐫 𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤\n\n𝐎𝐫𝐢𝐠𝐢𝐧𝐚𝐥 𝐋𝐢𝐧𝐤: {link}\n\n𝐒𝐡𝐨𝐫𝐭𝐞𝐧𝐞𝐝 𝐋𝐢𝐧𝐤: `{short_link2}`",quote=True,disable_web_page_preview=True)
         except Exception as e:
             await message.reply(f'𝐄𝐫𝐫𝐨𝐫: `{e}`', quote=True)
 
